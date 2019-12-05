@@ -1,6 +1,6 @@
 import React from 'react'
 
-class ComposeBox extends React.Component {
+class InputBox extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -18,7 +18,11 @@ class ComposeBox extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.sendMessage(this.state.message)
+    // Format the input string
+    this.props.sendQuestion({
+      senderName: "You",
+      content: this.state.message
+    })
     this.setState({
       message: ''
     })
@@ -26,12 +30,12 @@ class ComposeBox extends React.Component {
 
   render() {
     return (
-      <form className="compose-box" onSubmit={this.handleSubmit}>
+      <form className="input-box" onSubmit={this.handleSubmit}>
         <input disabled={this.props.disabled} onChange={this.handleChange}
-          value={this.state.message} placeholder="Enter question" type="text"/>
+          value={this.state.message} placeholder="Type your question and press enter" type="text" />
       </form>
     )
   }
 }
 
-export default ComposeBox
+export default InputBox

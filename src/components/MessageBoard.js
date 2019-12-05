@@ -1,28 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Message from './Message'
-import './MessageBoard.css';
-
-const DATA = [
-  {
-    senderId: 'jack',
-    text: 'Morning'
-  },
-  {
-    senderId: 'joe',
-    text: 'Hi,'
-  }
-]
+import '../Style.css';
 
 class MessageBoard extends React.Component {
-
   render() {
     return (
-      <div className="Message-board">
+      <div className="message-board">
         {
-          DATA.map((message, index) => {
+          this.props.messages.map((message, index) => {
             return (
-              <Message key={index} senderName={message.senderId} content={message.text} />
+              <Message key={index} senderName={message.senderName} content={message.content} />
             )
           })
         }
