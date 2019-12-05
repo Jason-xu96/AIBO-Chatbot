@@ -11,7 +11,7 @@ Open Node.js, navigate to the aibo-chatbot directory, then you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-type in their questions and press ‘send’ once they are done.
+Type in your question one at a time in the input box and press ‘enter’.
 
 ### `npm test`
 

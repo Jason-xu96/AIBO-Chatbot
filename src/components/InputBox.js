@@ -9,13 +9,13 @@ class InputBox extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-
+  // Change the message state as a user types in
   handleChange(e) {
     this.setState({
       message: e.target.value
     })
   }
-
+  // Once a user press 'enter', format the message and send it out
   handleSubmit(e) {
     e.preventDefault()
     // Format the input string
@@ -23,6 +23,7 @@ class InputBox extends React.Component {
       senderName: "You",
       content: this.state.message
     })
+    // Clear the message state out after sending out
     this.setState({
       message: ''
     })
@@ -31,8 +32,7 @@ class InputBox extends React.Component {
   render() {
     return (
       <form className="input-box" onSubmit={this.handleSubmit}>
-        <input disabled={this.props.disabled} onChange={this.handleChange}
-          value={this.state.message} placeholder="Type your question and press enter" type="text" />
+        <input onChange={this.handleChange} value={this.state.message} placeholder="Type your question and press enter" type="text" />
       </form>
     )
   }

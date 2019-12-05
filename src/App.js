@@ -18,7 +18,6 @@ class App extends React.Component {
     // Get the question from the user and print it
     var messages = this.state.messages
     messages.push(message)
-    console.log(this.state.messages.toString())
     var question = message.content
     // If the user input is valid
     // the chatbot logic will process the question
@@ -26,7 +25,6 @@ class App extends React.Component {
     if (question) {
       var answer = returnAnswer(question)
       messages.push({ senderName: "Chatbot", content: answer })
-      console.log(this.state.messages.toString())
     } else { // If users enter empty string
       var retryMessage = {
         senderName: "Chatbot",
