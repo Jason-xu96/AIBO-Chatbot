@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Reference for creating the basic structure of the message app, all the rest (e.g. algorithm, style)
+
 Please make sure you have Node >= 8.10 and npm >= 5.6 before running the app.
 
 ## Available Scripts
