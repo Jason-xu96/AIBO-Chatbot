@@ -49,9 +49,11 @@ export const returnAnswer = (question) => {
     console.log("-----------------------------------------------------------------------")
   }
   console.log("indexOfSelectedAnswer: " + indexOfSelectedAnswer)
-  // When no keyword is identified in the question, prompt users to rephrase their question
+  // When no keyword is identified in the question,
+  // tell the user the chatbot doesn’t know how to answer yet,
+  // and prompt users to rephrase their question.
   if (highestMatchRate === 0) {
-    return "I don't know what you are asking. Please rephrase your question :)"
+    return "I don't know how to answer yet. Maybe try to rephrase your question :)"
   } else {
     console.log("Selected Answer: " + answersArray[indexOfSelectedAnswer])
     return answersArray[indexOfSelectedAnswer]
@@ -63,10 +65,16 @@ export const returnAnswer = (question) => {
 
   // Set up the knowledge base by adding answers and keywords 
   function setUpKnowledgeBase() {
-    addKeywordAndAnswerPair(["when", "introduce", "announce"], "1999.")
+    addKeywordAndAnswerPair(["what", "definition", "is", "explain", "meaning", "description", "describe", "information"], "AIBO is a series of robotic dogs designed and manufactured by Sony.")
+    addKeywordAndAnswerPair(["when", "what time", "first", "introduce", "reveal", "release", "announce", "start", "manufactur", "produc", "sell", "enter the market"], "1999.")
     addKeywordAndAnswerPair(["how much", "cost", "money", "spend", "pay", "cash"], "AIBO retails at USD $1,800.")
     addKeywordAndAnswerPair(["where", "buy", "purchase", "get", "obtain", "shop", "pick up"], "It is currently only available in USA and Japan.")
-    //printAllAnswersAndKeywordsInKnowledgeBase()
+    addKeywordAndAnswerPair(["when", "what time", "discontinue", "stop", "manufactur", "produc", "sell"], "2006")
+    addKeywordAndAnswerPair(["when", "introduce", "announce", "new", "release", "reveal", "modern"], "2017")
+    addKeywordAndAnswerPair(["what", "how many", "model", "make", "configuration", "form", "version", "type", "design", "generations"], "There are four models: ERS-110, ERS-210, ERS-7, and ERS-1000")
+    addKeywordAndAnswerPair(["what", "where", "website", "information", "web", "site", "Internet", "page"], "Please visit https://us.aibo.com/")
+    addKeywordAndAnswerPair(["program", "cod", "customeriz", "api", "change", "computer"], "Sony is going to release its open API to the general public. Stay tuned.")
+    printAllAnswersAndKeywords()
   }
 
   function addKeywordAndAnswerPair(keywords, answer) {
@@ -75,7 +83,7 @@ export const returnAnswer = (question) => {
   }
 
   // Utility function that print out every answer with its associated keywords in the knowledge base
-  function printAllAnswersAndKeywordsInKnowledgeBase() {
+  function printAllAnswersAndKeywords() {
     for (var i = 0; i < keywordsArray.length; i++) {
       console.log("Answer: " + answersArray[i])
       var allKeywords = ""

@@ -9,7 +9,7 @@ class MessageBoard extends React.Component {
         {
           this.props.messages.map((message, index) => {
             return (
-              <Message key={index} senderName={message.senderName} content={message.content} />
+              <Message key={index} sender={message.sender} content={message.content} />
             )
           })
         }

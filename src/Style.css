@@ -27,19 +27,25 @@
   margin: 15px 0;
 }
 
-.message .message-senderName {
-    font-size: 15px;
-    opacity: 0.9;
-    margin-bottom: 6px;
+.message .message-sender {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-bottom: 6px;
 }
 
-  .message .message-content {
-    background: #282c34;
-    color: white;
-    display: inline;
-    padding: 4px 8px;
-    border-radius: 8px;
-  }
+.chatbot {
+}
+
+.you {
+}
+
+.message .message-content {
+  background: #282c34;
+  color: white;
+  display: inline;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
 
 .input-box input {
   width: 100%;

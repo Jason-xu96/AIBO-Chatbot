@@ -24,10 +24,10 @@ class App extends React.Component {
     // And return the answer
     if (question) {
       var answer = returnAnswer(question)
-      messages.push({ senderName: "Chatbot", content: answer })
+      messages.push({ sender: "Chatbot", content: answer })
     } else { // If users enter empty string
       var retryMessage = {
-        senderName: "Chatbot",
+        sender: "Chatbot",
         content: "Please enter your question."
       }
       messages.push(retryMessage)

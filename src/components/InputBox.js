@@ -20,7 +20,7 @@ class InputBox extends React.Component {
     e.preventDefault()
     // Format the input string
     this.props.sendQuestion({
-      senderName: "You",
+      sender: "You",
       content: this.state.message
     })
     // Clear the message state out after sending out
