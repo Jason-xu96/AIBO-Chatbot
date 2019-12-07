@@ -66,7 +66,7 @@ export const returnAnswer = (question) => {
   // Set up the knowledge base by adding answers and keywords 
   function setUpKnowledgeBase() {
     addKeywordAndAnswerPair(["what", "definition", "is", "explain", "meaning", "description", "describe", "information"], "AIBO is a series of robotic dogs designed and manufactured by Sony.")
-    addKeywordAndAnswerPair(["when", "what time", "first", "introduce", "reveal", "release", "announce", "start", "manufactur", "produc", "sell", "enter the market"], "1999.")
+    addKeywordAndAnswerPair(["when", "what time", "first", "introduce", "reveal", "release", "announce", "start", "sell", "enter the market"], "1999.")
     addKeywordAndAnswerPair(["how much", "cost", "money", "spend", "pay", "cash"], "AIBO retails at USD $1,800.")
     addKeywordAndAnswerPair(["where", "buy", "purchase", "get", "obtain", "shop", "pick up"], "It is currently only available in USA and Japan.")
     addKeywordAndAnswerPair(["when", "what time", "discontinue", "stop", "manufactur", "produc", "sell"], "2006")
