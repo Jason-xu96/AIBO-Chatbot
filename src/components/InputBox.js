@@ -32,7 +32,7 @@ class InputBox extends React.Component {
   render() {
     return (
       <form className="input-box" onSubmit={this.handleSubmit}>
-        <input onChange={this.handleChange} value={this.state.message} placeholder="Type your question and press enter" type="text" />
+        <input onChange={this.handleChange} value={this.state.message} placeholder="Please type your question and press enter" type="text" />
       </form>
     )
   }

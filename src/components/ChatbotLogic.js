@@ -34,13 +34,13 @@ export const returnAnswer = (question) => {
       // It's derive from dividing the number of matched keywords by the total number of question keywords that an answer has.
       if (j === keywordsArray[i].length - 1) {
         var currentMatchRate = numOfIdentifiedKeywords * 100 / numOfKeywords
-        console.log("Current Match Rate: " + currentMatchRate+"%")
+        console.log("Current Match Rate: " + currentMatchRate + "%")
         // If the current match rate is the highest
         // Replace the highest match rate with current match rate
         // Record its index
         if (currentMatchRate > highestMatchRate) {
           highestMatchRate = currentMatchRate
-          indexOfSelectedAnswer = j
+          indexOfSelectedAnswer = i
         }
       }
     }
@@ -48,11 +48,19 @@ export const returnAnswer = (question) => {
     console.log("All Question Keywords: " + allKeywords)
     console.log("-----------------------------------------------------------------------")
   }
-  console.log("Selected Answer: " + answersArray[indexOfSelectedAnswer])
-  return answersArray[indexOfSelectedAnswer]
+  console.log("indexOfSelectedAnswer: " + indexOfSelectedAnswer)
+  // When no keyword is identified in the question, prompt users to rephrase their question
+  if (highestMatchRate === 0) {
+    return "I don't know what you are asking. Please rephrase your question :)"
+  } else {
+    console.log("Selected Answer: " + answersArray[indexOfSelectedAnswer])
+    return answersArray[indexOfSelectedAnswer]
+  }
 
 
   // -----------------------------------------------------------------------
+
+
   // Set up the knowledge base by adding answers and keywords 
   function setUpKnowledgeBase() {
     addKeywordAndAnswerPair(["when", "introduce", "announce"], "1999.")
